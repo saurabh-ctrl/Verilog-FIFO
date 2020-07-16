@@ -1,0 +1,159 @@
+ISim P.68d (signature 0x7708f090)
+This is a Full version of ISim.
+Time resolution is 1 ps
+Simulator is doing circuit initialization process.
+------------[                   0] RESET CHECK-----------------
+Finished circuit initialization process.
+------------[               10000] RESET CHECK END-----------------
+------------[               10000] WRITE CHECK-----------------
+
+Write operation HIGH
+ DATA Input = 00 -> MEM[0]
+
+Write operation HIGH
+ DATA Input = 24 -> MEM[1]
+
+Write operation HIGH
+ DATA Input = 81 -> MEM[2]
+
+Write operation HIGH
+ DATA Input = 09 -> MEM[3]
+
+Write operation HIGH
+ DATA Input = 63 -> MEM[4]
+
+Write operation HIGH
+ DATA Input = 0d -> MEM[5]
+
+Write operation HIGH
+ DATA Input = 8d -> MEM[6]
+
+Write operation HIGH
+ DATA Input = 65 -> MEM[7]
+
+Write operation HIGH
+ DATA Input = 12 -> MEM[0]
+FIFO is Full
+
+Write operation HIGH
+ DATA Input = 01 -> MEM[0]
+FIFO is Full
+------------[              110000] WRITE CHECK END-----------------
+------------[              110000] READ CHECK-----------------
+
+READ operation HIGH
+ DATA out = 00 <- MEM[0]
+
+READ operation HIGH
+ DATA out = 24 <- MEM[1]
+
+READ operation HIGH
+ DATA out = 81 <- MEM[2]
+
+READ operation HIGH
+ DATA out = 09 <- MEM[3]
+
+READ operation HIGH
+ DATA out = 63 <- MEM[4]
+
+READ operation HIGH
+ DATA out = 0d <- MEM[5]
+
+READ operation HIGH
+ DATA out = 8d <- MEM[6]
+
+READ operation HIGH
+ DATA out = 65 <- MEM[7]
+
+READ operation HIGH
+ DATA out = 12 <- MEM[0]
+FIFO is EMPTY
+
+READ operation HIGH
+ DATA out = 00 <- MEM[0]
+FIFO is EMPTY
+------------[              220000] READ CHECK END-----------------
+------------[              230000] SIMUL CHECK-----------------
+FIFO is EMPTY
+
+READ operation HIGH
+ DATA out = 00 <- MEM[0]
+FIFO is EMPTY
+
+READ operation HIGH
+ DATA out = 00 <- MEM[0]
+FIFO is EMPTY
+
+Write operation HIGH
+ DATA Input = e5 -> MEM[1]
+
+Write operation HIGH
+ DATA Input = 8f -> MEM[2]
+
+Write operation HIGH
+ DATA Input = bd -> MEM[3]
+
+Write operation HIGH
+ DATA Input = 63 -> MEM[4]
+
+READ operation HIGH
+ DATA out = e5 <- MEM[1]
+
+READ operation HIGH
+ DATA out = 8f <- MEM[2]
+
+Write operation HIGH
+ DATA Input = 53 -> MEM[5]
+
+READ operation HIGH
+ DATA out = bd <- MEM[3]
+
+Write operation HIGH
+ DATA Input = 02 -> MEM[6]
+
+READ operation HIGH
+ DATA out = 63 <- MEM[4]
+
+READ operation HIGH
+ DATA out = 53 <- MEM[5]
+
+Write operation HIGH
+ DATA Input = ca -> MEM[7]
+
+Write operation HIGH
+ DATA Input = 78 -> MEM[0]
+
+Write operation HIGH
+ DATA Input = b6 -> MEM[1]
+
+READ operation HIGH
+ DATA out = 02 <- MEM[6]
+
+READ operation HIGH
+ DATA out = ca <- MEM[7]
+
+Write operation HIGH
+ DATA Input = 3b -> MEM[2]
+
+READ operation HIGH
+ DATA out = 78 <- MEM[0]
+
+Write operation HIGH
+ DATA Input = 62 -> MEM[3]
+
+READ operation HIGH
+ DATA out = b6 <- MEM[1]
+
+READ operation HIGH
+ DATA out = 3b <- MEM[2]
+
+READ operation HIGH
+ DATA out = 62 <- MEM[3]
+FIFO is EMPTY
+
+READ operation HIGH
+ DATA out = 00 <- MEM[3]
+FIFO is EMPTY
+------------[              485000] SIMUL CHECK END-----------------
+Stopped at time : 1 us 
+ISim>  
