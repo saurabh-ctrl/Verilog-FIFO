@@ -6,19 +6,19 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 `define SV_RAND_CHECK(r) \
 	do begin \
-      if(!r) begin \
-        $display("%0s:%0d: Randomization failed \"%s\"",\
-                 `__FILE__,`__LINE__,`"r`");\
-        $finish; \
-      end \
-    end while(0)
+      	if(!r) begin \
+        	$display("%0s:%0d: Randomization failed \"%s\"",\
+        	         `__FILE__,`__LINE__,`"r`");\
+        	$finish; \
+      	end \
+    	end while(0)
 
 	
 //////////////////////////////////////////////////////////////////////////////////////
 // This file contain the Interface for the FIFO Verification:
 // In the Interface there will be two modport and two clocking block for:
-//		1. Driver Class
-//		2. Monitor Class
+//	1. Driver Class
+//	2. Monitor Class
 /////////////////////////////////////////////////////////////////////////////////////
 
 interface fifo_if( input bit clk );
@@ -46,8 +46,8 @@ class transcation;
 	
 	// Normal variable:
 	bit [7:0] o_data;
-	bit		  fifo_full;
-	bit		  fifo_empty;
+	bit	  fifo_full;
+	bit	  fifo_empty;
 	
 	// Set the constraint for randomize such that their will be either write or read:
 	constraint we_or_rd { i_rd != i_we; }
@@ -58,7 +58,7 @@ class transcation;
 		this.rstn 	= temp.rstn;
 		this.i_we 	= temp.i_we;
 		this.i_rd 	= temp.i_rd;
-		this.i_data = temp.i_data;
+		this.i_data 	= temp.i_data;
 	endfunction
 endclass
 
@@ -96,8 +96,7 @@ class generator;
 			$display("Waiting for Driver to done");
 			@(drv_done);
 		end
-	endtask
-		
+	endtask	
 endclass 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -120,7 +119,7 @@ class driver;
 
 	// new constructor:
 	function new(virtual fifo_if inth, mailbox mb_drv, event drv_done);
-		this.inth 		= inth;
+		this.inth 	= inth;
 		this.mb_drv 	= mb_drv;
 		this.drv_done 	= drv_done;
 	endfunction
@@ -172,7 +171,7 @@ class monitor;
 	
 	// new constructor:
 	function new(virtual fifo_if inth,mailbox mb_mon);
-		this.inth 	= inth;
+		this.inth   = inth;
 		this.mb_mon = mb_mon;
 	endfunction
 	
@@ -184,9 +183,9 @@ class monitor;
 			trans = new();
 			@(posedge inth.clk);
 			trans.i_data	<= inth.i_data;
-			trans.rstn		<= inth.rstn;
-			trans.i_we		<= inth.i_we;
-			trans.i_rd		<= inth.i_rd;
+			trans.rstn	<= inth.rstn;
+			trans.i_we	<= inth.i_we;
+			trans.i_rd	<= inth.i_rd;
 			trans.o_data	<= inth.o_data;
 			trans.fifo_full	<= inth.fifo_full;
 			trans.fifo_empty <= inth.fifo_empty;
@@ -225,15 +224,15 @@ class scoreboard;
 		$display("----------------[%0t] SCOREBOARD STARTS ---------------",$time);
 		forever
 		begin
-			trans 		= new();		// Creating the object "trans".
-			ref_trans 	= new();		// Creating the object "ref_trans".
+			trans 	  = new();		// Creating the object "trans".
+			ref_trans = new();		// Creating the object "ref_trans".
 			mb_scr.get(trans);
 			ref_trans.copy(trans);		// Deep copy of trans object into ref_trans object.
 			
 			// Creating reference DUT type module using queue and its property:
 			if(ref_trans.rstn)
 			begin
-				ref_trans.o_data	<= 0;
+				ref_trans.o_data <= 0;
 			end
 			
 			else
